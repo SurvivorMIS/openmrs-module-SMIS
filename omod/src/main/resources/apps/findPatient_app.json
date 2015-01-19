@@ -1,0 +1,22 @@
+[
+    {
+        "id": "SurvivorMIS.findPatient",
+        "instanceOf": "coreapps.template.findPatient",
+        "description": "Patient search that goes to the SurvivorMIS survivor dashboard",
+        "order": 2,
+        "requiredPrivilege": "App: coreapps.findPatient",
+        "extensions": [
+            {
+                "id": "SurvivorMIS.findPatientHomepageLink",
+                "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+                "type": "link",
+                "label": "coreapps.findPatient.app.label",
+                "url": "coreapps/findpatient/findPatient.page?app=SurvivorMIS.findPatient",
+                "icon": "icon-search"
+            }
+        ],
+        "config": {
+            "afterSelectedUrl": "/SurvivorMIS/SurvivorOverview.page?patient={{patientId}}"
+        }
+    }
+]
