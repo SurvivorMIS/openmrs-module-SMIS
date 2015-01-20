@@ -49,7 +49,7 @@
 	<activator>${project.parent.groupId}.${project.parent.artifactId}.SurvivorMISActivator</activator>
 
     <packagesWithMappedClasses>
-        org.openmrs.module.SurvivorMIS.domain
+        <!--org.openmrs.module.SurvivorMIS.domain-->
     </packagesWithMappedClasses>
 
 	<!-- Internationalization -->
