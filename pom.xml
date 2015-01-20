@@ -124,12 +124,13 @@
             <artifactId>providermanagement-api</artifactId>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.openmrs.contrib</groupId>
             <artifactId>testutils</artifactId>
             <version>${openmrsTestutilsVersion}</version>
             <scope>test</scope>
         </dependency>
+        -->
     </dependencies>
 
 	<build>
