@@ -29,7 +29,7 @@
     </scm>
 
 	<modules>
-		<!--We don't need the api module just yet <module>api</module>-->
+		<module>api</module>
 		<module>omod</module>
 	</modules>
 
