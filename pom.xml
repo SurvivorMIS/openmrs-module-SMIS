@@ -6,9 +6,9 @@
 	<artifactId>SurvivorMIS</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>SurvivorMIS Module</name>
+	<name>SurvivorMIS</name>
 	<description>This module provides SurvivorMIS functionality to OpenMRS 2.x</description>
-	<url>https://www.survivormis.com</url>
+	<url>https://wiki.openmrs.org/display/docs/SurvivorMIS+Module</url>
 	
 	<developers>
 		<developer>
@@ -21,7 +21,7 @@
 		<url>http://www.friendsofmaitinepal.org</url>
 	</organization>
 
-    <scm>
+	<scm>
         <connection>scm:git:git@github.com:SurvivorMIS/openmrs-module-SurvivorMIS.git</connection>
         <developerConnection>scm:git:git@github.com:SurvivorMIS/openmrs-module-SurvivorMIS.git</developerConnection>
         <url>https://github.com/SurvivorMIS/openmrs-module-SurvivorMIS</url>
@@ -32,14 +32,13 @@
 		<module>api</module>
 		<module>omod</module>
 	</modules>
-
-    <properties>
+	
+	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <distro.groupId>org.openmrs.distro</distro.groupId>
         <distro.artifactId>referenceapplication</distro.artifactId>
         <distro.version>2.2-SNAPSHOT</distro.version>
-        <openMRSVersion>1.10.1</openMRSVersion>
-        <openmrsTestutilsVersion>1.5</openmrsTestutilsVersion>
+        <openMRSVersion>1.9.8</openMRSVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -106,10 +105,6 @@
             <groupId>org.openmrs.module</groupId>
             <artifactId>htmlformentryui-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>registrationapp-api</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
@@ -123,14 +118,6 @@
             <groupId>org.openmrs.module</groupId>
             <artifactId>providermanagement-api</artifactId>
         </dependency>
-
-        <!--<dependency>
-            <groupId>org.openmrs.contrib</groupId>
-            <artifactId>testutils</artifactId>
-            <version>${openmrsTestutilsVersion}</version>
-            <scope>test</scope>
-        </dependency>
-        -->
     </dependencies>
 
 	<build>
