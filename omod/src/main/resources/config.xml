@@ -32,6 +32,12 @@
     <require_module>
     	org.openmrs.module.appui
 	</require_module>
+	<require_module>
+    	org.openmrs.module.emrapi
+	</require_module>
+	<require_module>
+    	org.openmrs.module.coreapps
+	</require_module>
 			
 	</require_modules>
 	<!-- / Required Modules -->

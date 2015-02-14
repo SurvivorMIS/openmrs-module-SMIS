@@ -1,8 +1,6 @@
 <%
     ui.decorateWith("appui", "standardEmrPage")
 %>
-Hello World
-%{-
 <script type="text/javascript">
     var breadcrumbs = [
         { icon: "icon-home", link: '/' + OPENMRS_CONTEXT_PATH + '/index.htm' },
@@ -24,7 +22,7 @@ ${ ui.includeFragment("coreapps", "patientHeader", [ patient: patient.patient, a
 <div class="container">
     <div class="dashboard clear">
         <div class="info-container column">
-            ${ ui.includeFragment("coreapps", "clinicianfacing/diagnosisWidget", [ patient: patient ]) }
+            ${ ui.includeFragment("SurvivorMIS", "SurvivorOverview/personalInformation", [patientId: patient]) }
             
             <% if (firstColumnFragments) {
 			    firstColumnFragments.each { %>
@@ -34,31 +32,6 @@ ${ ui.includeFragment("coreapps", "patientHeader", [ patient: patient.patient, a
 
         </div>
         <div class="info-container column">
-            <%/*
-            <div class="info-section">
-                <div class="info-header">
-                    <i class="icon-medicine"></i>
-                    <h3>${ ui.message("coreapps.clinicianfacing.prescribedMedication").toUpperCase() }</h3>
-                </div>
-                <div class="info-body">
-                    <ul>
-                        <li></li>
-                    </ul>
-                    <a class="view-more">${ ui.message("coreapps.clinicianfacing.showMoreInfo") } ></a>
-                </div>
-            </div>
-            <div class="info-section">
-                <div class="info-header">
-                    <i class="icon-medical"></i>
-                    <h3>${ ui.message("coreapps.clinicianfacing.allergies").toUpperCase() }</h3>
-                </div>
-                <div class="info-body">
-                    <ul>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-            */%>
             ${ ui.includeFragment("coreapps", "clinicianfacing/visitsSection", [patient: patient]) }
             
             <% if (secondColumnFragments) {
@@ -106,4 +79,3 @@ ${ ui.includeFragment("coreapps", "patientHeader", [ patient: patient.patient, a
         </div>
     </div>
 </div>
--}%

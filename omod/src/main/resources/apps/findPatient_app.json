@@ -16,7 +16,7 @@
             }
         ],
         "config": {
-            "afterSelectedUrl": "/SurvivorMIS/SurvivorOverview.page?patient={{patientId}}"
+            "afterSelectedUrl": "/SurvivorMIS/SurvivorOverview.page?patientId={{patientId}}"
         }
     }
 ]
