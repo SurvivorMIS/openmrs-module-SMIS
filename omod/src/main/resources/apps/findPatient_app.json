@@ -2,9 +2,9 @@
     {
         "id": "SurvivorMIS.findSurvivor",
         "instanceOf": "coreapps.template.findPatient",
-        "description": "Patient search that goes to the SurvivorMIS survivor dashboard",
+        "description": "SurvivorMIS.findSurvivor.app.description",
         "order": 2,
-        "requiredPrivilege": "App: coreapps.findPatient",
+        "requiredPrivilege": "App: SurvivorMIS.findPatient",
         "extensions": [
             {
                 "id": "SurvivorMIS.findPatientHomepageLink",

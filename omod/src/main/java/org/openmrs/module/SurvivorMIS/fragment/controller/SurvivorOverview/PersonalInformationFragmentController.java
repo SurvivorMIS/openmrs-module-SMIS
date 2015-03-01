@@ -29,21 +29,127 @@ public class PersonalInformationFragmentController {
 	
 	public void controller(FragmentModel model, @FragmentParam("patientId") PatientDomainWrapper patient,
 	                       @SpringBean("encounterService") EncounterService encounterService) {
+		//Define the encounterTypes array
 		List<EncounterType> encounterTypes = new ArrayList<EncounterType>();
 		
-		EncounterType encounterType = encounterService.getEncounterTypeByUuid("a000cb34-9ec1-4344-a1c8-f692232f6edd");
-
-		if (encounterType == null) {
-			throw new IllegalStateException("No encounter type with uuid 299336d6-058e-4313-bc42-a8cadfa81b54");
-		}
-		encounterTypes.add(encounterType);
-		
-		List<Encounter> encounters = encounterService.getEncounters(patient.getPatient(), null, null, null, null, encounterTypes, null,
-			    null, null, false);
-		if (encounters.size() > 0) {
-            model.addAttribute("encounter", encounters.get(encounters.size() - 1));
-		} else {
-			model.addAttribute("encounter", null);
-		}
+		//Staff Observations
+			EncounterType encounterType = encounterService.getEncounterTypeByUuid("151655f0-7c57-40c3-af1a-dbc5cf992440");
+			//We do this in case the user has deleted the encounter type
+			if (encounterType == null) {
+				throw new IllegalStateException("No Staff Observation encounter type with uuid 151655f0-7c57-40c3-af1a-dbc5cf992440");
+			}
+			encounterTypes.add(encounterType);
+			
+			List<Encounter> encounters = encounterService.getEncounters(patient.getPatient(), null, null, null, null, encounterTypes, null,
+				    null, null, false);
+			//Return the latest encounter
+			if (encounters.size() > 0) {
+	            model.addAttribute("StaffObservations", encounters.get(encounters.size() - 1));
+			} else {
+				model.addAttribute("StaffObservations", null);
+			}
+			encounterTypes.remove(encounterType);
+		//Identification
+			encounterType = encounterService.getEncounterTypeByUuid("3ca9349a-7237-46aa-bdeb-8d136af317e9");
+			//We do this in case the user has deleted the encounter type
+			if (encounterType == null) {
+				throw new IllegalStateException("No Identification encounter type with uuid 3ca9349a-7237-46aa-bdeb-8d136af317e9");
+			}
+			encounterTypes.add(encounterType);
+			
+			encounters = encounterService.getEncounters(patient.getPatient(), null, null, null, null, encounterTypes, null,
+				    null, null, false);
+			//Return the latest encounter
+			if (encounters.size() > 0) {
+	            model.addAttribute("Identification", encounters.get(encounters.size() - 1));
+			} else {
+				model.addAttribute("Identification", null);
+			}
+			encounterTypes.remove(encounterType);
+		//Emergency Contact
+			encounterType = encounterService.getEncounterTypeByUuid("2e19aee6-6bc4-4311-8d71-2c4dfb15b8ba");
+			//We do this in case the user has deleted the encounter type
+			if (encounterType == null) {
+				throw new IllegalStateException("No Emergency Contact encounter type with uuid 2e19aee6-6bc4-4311-8d71-2c4dfb15b8ba");
+			}
+			encounterTypes.add(encounterType);
+			
+			encounters = encounterService.getEncounters(patient.getPatient(), null, null, null, null, encounterTypes, null,
+				    null, null, false);
+			//Return the latest encounter
+			if (encounters.size() > 0) {
+	            model.addAttribute("EmergencyContact", encounters.get(encounters.size() - 1));
+			} else {
+				model.addAttribute("EmergencyContact", null);
+			}
+			encounterTypes.remove(encounterType);
+		//Family History
+			encounterType = encounterService.getEncounterTypeByUuid("e04dc582-5205-45a2-9f75-f3a998fc705b");
+			//We do this in case the user has deleted the encounter type
+			if (encounterType == null) {
+				throw new IllegalStateException("No Family History encounter type with uuid e04dc582-5205-45a2-9f75-f3a998fc705b");
+			}
+			encounterTypes.add(encounterType);
+			
+			encounters = encounterService.getEncounters(patient.getPatient(), null, null, null, null, encounterTypes, null,
+				    null, null, false);
+			//Return the latest encounter
+			if (encounters.size() > 0) {
+	            model.addAttribute("FamilyHistory", encounters.get(encounters.size() - 1));
+			} else {
+				model.addAttribute("FamilyHistory", null);
+			}
+			encounterTypes.remove(encounterType);
+		//Education Background
+			encounterType = encounterService.getEncounterTypeByUuid("0e625626-7973-4dd0-892f-eb90f6e58c56");
+			//We do this in case the user has deleted the encounter type
+			if (encounterType == null) {
+				throw new IllegalStateException("No Education Background encounter type with uuid 0e625626-7973-4dd0-892f-eb90f6e58c56");
+			}
+			encounterTypes.add(encounterType);
+			
+			encounters = encounterService.getEncounters(patient.getPatient(), null, null, null, null, encounterTypes, null,
+				    null, null, false);
+			//Return the latest encounter
+			if (encounters.size() > 0) {
+	            model.addAttribute("EducationBackground", encounters.get(encounters.size() - 1));
+			} else {
+				model.addAttribute("EducationBackground", null);
+			}
+			encounterTypes.remove(encounterType);
+		//Relationship Information
+			encounterType = encounterService.getEncounterTypeByUuid("a2790188-86f4-466d-ae30-ee0f336b5793");
+			//We do this in case the user has deleted the encounter type
+			if (encounterType == null) {
+				throw new IllegalStateException("No Relationship Information encounter type with uuid a2790188-86f4-466d-ae30-ee0f336b5793");
+			}
+			encounterTypes.add(encounterType);
+			
+			encounters = encounterService.getEncounters(patient.getPatient(), null, null, null, null, encounterTypes, null,
+				    null, null, false);
+			//Return the latest encounter
+			if (encounters.size() > 0) {
+	            model.addAttribute("RelationshipInformation", encounters.get(encounters.size() - 1));
+			} else {
+				model.addAttribute("RelationshipInformation", null);
+			}
+			encounterTypes.remove(encounterType);
+		//Case Creation
+			encounterType = encounterService.getEncounterTypeByUuid("bf7797d3-8004-42ab-a3a0-3e61197b6f96");
+			//We do this in case the user has deleted the encounter type
+			if (encounterType == null) {
+				throw new IllegalStateException("No Case Creation encounter type with uuid bf7797d3-8004-42ab-a3a0-3e61197b6f96");
+			}
+			encounterTypes.add(encounterType);
+			
+			encounters = encounterService.getEncounters(patient.getPatient(), null, null, null, null, encounterTypes, null,
+				    null, null, false);
+			//Return the latest encounter
+			if (encounters.size() > 0) {
+	            model.addAttribute("CaseCreation", encounters.get(encounters.size() - 1));
+			} else {
+				model.addAttribute("CaseCreation", null);
+			}
+			encounterTypes.remove(encounterType);
 	}
 }

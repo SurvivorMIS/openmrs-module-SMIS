@@ -1,0 +1,22 @@
+[
+    {
+        "id": "SurvivorMIS.activeVisits",
+		"instanceOf": "coreapps.template.activeVisits",
+        "description": "SurvivorMIS.activeVisits.app.description",
+        "order": 10,
+        "extensions": [
+            {
+                "id": "${project.parent.groupId}.${project.parent.artifactId}.activeVisitsHomepageLink",
+                "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+                "type": "link",
+                "label": "SurvivorMIS.activeVisits.app.label",
+                "url": "coreapps/activeVisits.page?app=SurvivorMIS.activeVisits",
+                "icon": "icon-calendar",
+                "requiredPrivilege": "App: SurvivorMIS.activeVisits"
+            }
+        ],
+        "config": {
+            "patientPageUrl": "/SurvivorMIS/SurvivorOverview.page?patientId={{patientId}}"
+        }
+    }
+]

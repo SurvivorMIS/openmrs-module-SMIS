@@ -1,0 +1,64 @@
+[
+    {
+        "id": "SurvivorMIS.basicRegisterPatient",
+        "instanceOf": "registrationapp.registerPatient",
+        "label": "SurvivorMIS.basicRegisterPatient.app.label",
+        "description": "SurvivorMIS.basicRegisterPatient.app.description",
+        "extensions": [
+            {
+                "id": "SurvivorMIS.basicRegisterPatient.homepageLink",
+                "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+                "type": "link",
+                "label": "SurvivorMIS.basicRegisterPatient.app.label",
+                "url": "registrationapp/registerPatient.page?appId=SurvivorMIS.basicRegisterPatient",
+                "icon": "icon-user",
+                "order": 1,
+                "requiredPrivilege": "App: SurvivorMIS.registerPatient"
+            }
+        ],
+        "config": {
+            "afterCreatedUrl": "/SurvivorMIS/SurvivorOverview.page?patientId={{patientId}}",
+            "allowManualIdentifier": "false",
+            "allowUnknownPatients" : "true",
+            "allowRetrospectiveEntry" : "false",
+            "registrationEncounter" : "null",
+            "sections":[
+	            {
+                    "id": "contactInfo",
+                    "label": "registrationapp.patient.contactInfo.label",
+                    "questions": [
+                        {
+                            "legend": "Person.address",
+                            "fields": [
+                                {
+                                    "type": "personAddress",
+                                    "label": "registrationapp.patient.address.question",
+                                    "widget": {
+                                        "providerName": "uicommons",
+                                        "fragmentId": "field/personAddress"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "legend": "Phone",
+                            "id": "phoneNumberLabel",
+                            "fields": [
+                                {
+                                    "type": "personAttribute",
+                                    "label": "Patient Phone Number",
+                                    "formFieldName": "phoneNumber",
+                                    "uuid": "14d4f066-15f5-102d-96e4-000c29c2a5d7",
+                                    "widget": {
+                                        "providerName": "uicommons",
+                                        "fragmentId": "field/text"
+                                    }
+                                }
+                            ]
+                        }
+                      ]
+	            }
+            ]
+        }
+    }
+]

@@ -23,23 +23,10 @@ ${ ui.includeFragment("coreapps", "patientHeader", [ patient: patient.patient, a
     <div class="dashboard clear">
         <div class="info-container column">
             ${ ui.includeFragment("SurvivorMIS", "SurvivorOverview/personalInformation", [patientId: patient]) }
-            
-            <% if (firstColumnFragments) {
-			    firstColumnFragments.each { %>
-			        ${ ui.includeFragment(it.extensionParams.provider, it.extensionParams.fragment, [ patientId: patient.patient.id, app: it.appId ])}
-			<%  }
-			} %>
 
         </div>
         <div class="info-container column">
-            ${ ui.includeFragment("coreapps", "clinicianfacing/visitsSection", [patient: patient]) }
-            
-            <% if (secondColumnFragments) {
-			    secondColumnFragments.each { %>
-			        ${ ui.includeFragment(it.extensionParams.provider, it.extensionParams.fragment, [patientId: patient.patient.id, app: it.appId ])}
-			<%   }
-			} %>
-			
+            ${ ui.includeFragment("SurvivorMIS", "SurvivorOverview/visitsSection", [patient: patient]) }
         </div>
         <div class="action-container column">
             <div class="action-section">
