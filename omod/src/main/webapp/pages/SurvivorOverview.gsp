@@ -23,7 +23,7 @@ ${ ui.includeFragment("coreapps", "patientHeader", [ patient: patient.patient, a
     <div class="dashboard clear">
         <div class="info-container column">
             ${ ui.includeFragment("SurvivorMIS", "SurvivorOverview/personalInformation", [patientId: patient]) }
-
+			${ ui.includeFragment("SurvivorMIS", "SurvivorOverview/rapeIncident", [patientId: patient]) }
         </div>
         <div class="info-container column">
             ${ ui.includeFragment("SurvivorMIS", "SurvivorOverview/visitsSection", [patient: patient]) }
