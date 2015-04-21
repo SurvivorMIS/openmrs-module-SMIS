@@ -17,8 +17,6 @@ import org.openmrs.Encounter;
 import org.openmrs.EncounterType;
 import org.openmrs.module.emrapi.patient.PatientDomainWrapper;
 import org.openmrs.api.EncounterService;
-import org.openmrs.module.emrapi.encounter.EncounterObservationServiceHelper;
-import org.openmrs.module.emrapi.encounter.ObservationMapper;
 import org.openmrs.ui.framework.annotation.FragmentParam;
 import org.openmrs.ui.framework.annotation.SpringBean;
 import org.openmrs.ui.framework.fragment.FragmentModel;
@@ -52,6 +50,26 @@ public class RapeIncidentFragmentController {
 				model.addAttribute("AllRapeIncidentEncounters", null);
 			}
 			encounterTypes.remove(encounterType);
-		
+			
+		//Rape Incident Survivor Support Encounter
+			encounterType = encounterService.getEncounterTypeByUuid("91cb4586-5853-44d4-93ca-d26ba44d1069");
+			//We do this in case the user has deleted the encounter type
+			if (encounterType == null) {
+				throw new IllegalStateException("No Rape encounter type with uuid 91cb4586-5853-44d4-93ca-d26ba44d1069");
+			}
+			encounterTypes.add(encounterType);
+			
+			encounters = encounterService.getEncounters(patient.getPatient(), null, null, null, null, encounterTypes, null,
+				    null, null, false);
+			
+			//Return all encounters
+			if (encounters.size() > 0) {
+				model.addAttribute("AllRapeIncidentSurvivorSupportEncounters", encounters);
+				
+			} else {
+				model.addAttribute("AllRapeIncidentSurvivorSupportEncounters", null);
+			}
+			encounterTypes.remove(encounterType);
+			
 	}
 }

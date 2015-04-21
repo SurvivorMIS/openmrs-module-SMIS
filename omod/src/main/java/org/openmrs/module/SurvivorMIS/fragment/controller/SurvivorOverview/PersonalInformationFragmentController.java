@@ -15,7 +15,6 @@ package org.openmrs.module.SurvivorMIS.fragment.controller.SurvivorOverview;
 
 import org.openmrs.Encounter;
 import org.openmrs.EncounterType;
-import org.openmrs.Patient;
 import org.openmrs.module.emrapi.patient.PatientDomainWrapper;
 import org.openmrs.api.EncounterService;
 import org.openmrs.ui.framework.annotation.FragmentParam;

@@ -14,7 +14,6 @@
 package org.openmrs.module.SurvivorMIS.fragment.controller.SurvivorOverview;
 
 import org.openmrs.Patient;
-import org.openmrs.Visit;
 import org.openmrs.module.emrapi.patient.PatientDomainWrapper;
 import org.openmrs.module.emrapi.visit.VisitDomainWrapper;
 import org.openmrs.ui.framework.annotation.InjectBeans;

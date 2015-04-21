@@ -16,27 +16,9 @@ package org.openmrs.module.SurvivorMIS;
 
 import org.apache.commons.logging.Log; 
 import org.apache.commons.logging.LogFactory;
-import org.openmrs.Concept;
-import org.openmrs.ConceptName;
-import org.openmrs.ConceptNameTag;
-import org.openmrs.GlobalProperty;
-import org.openmrs.Location;
-import org.openmrs.LocationTag;
-import org.openmrs.api.AdministrationService;
-import org.openmrs.api.ConceptService;
-import org.openmrs.api.FormService;
-import org.openmrs.api.LocationService;
-import org.openmrs.api.context.Context;
-import org.openmrs.module.BaseModuleActivator;
 import org.openmrs.module.Module;
 import org.openmrs.module.ModuleFactory;
 import org.openmrs.module.ModuleActivator;
-import org.openmrs.module.htmlformentry.HtmlFormEntryService;
-import org.openmrs.module.htmlformentryui.HtmlFormUtil;
-import org.openmrs.ui.framework.resource.ResourceFactory;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * This class contains the logic that is run every time this module is either started or stopped.
@@ -99,26 +81,4 @@ public class SurvivorMISActivator implements ModuleActivator {
 		log.info("SurvivorMIS stopped");
 	}
 	
-	private void setupHtmlForms(FormService formService, HtmlFormEntryService htmlFormEntryService) throws Exception {
-        try {
-            ResourceFactory resourceFactory = ResourceFactory.getInstance();
-            /**Note: Separate Form names by a comma*/
-            List<String> htmlforms = Arrays.asList(
-            		"SurvivorMIS:htmlforms/Personal_Information_Section_A.xml"
-            );
-
-            for (String htmlform : htmlforms) {
-                HtmlFormUtil.getHtmlFormFromUiResource(resourceFactory, formService, htmlFormEntryService, htmlform);
-            }
-        }
-        catch (Exception e) {
-            // this is a hack to get component test to pass until we find the proper way to mock this
-            if (ResourceFactory.getInstance().getResourceProviders() == null) {
-                log.error("Unable to load HTML forms--this error is expected when running component tests, but it is an error if you see it in production");
-            }
-            else {
-                throw e;
-            }
-        }
-    }
 }

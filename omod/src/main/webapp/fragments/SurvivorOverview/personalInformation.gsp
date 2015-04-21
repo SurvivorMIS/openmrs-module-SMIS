@@ -7,7 +7,7 @@
 	<ul>
 		<!--Staff Observations-->
         <% if (StaffObservations) { %>
-            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/editHtmlFormWithSimpleUi", [ patientId: patient.patient.id, encounterId: StaffObservations.id, returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.StaffObservations.label") }</a></li>
+            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/viewEncounterWithHtmlForm", [ patientId: patient.patient.id, encounter: StaffObservations.id, editStyle: "simple", returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.StaffObservations.label") }</a></li>
         <% } else { %>
         	<!--Note that these names are hard coded into the view using the module messages.properties file-->
         	<% if (activeVisit) { %>
@@ -18,7 +18,7 @@
         <% } %>  
         <!--Identification-->
         <% if (Identification) { %>
-            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/editHtmlFormWithSimpleUi", [ patientId: patient.patient.id, encounterId: Identification.id, returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.Identification.label") }</a></li>
+            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/viewEncounterWithHtmlForm", [ patientId: patient.patient.id, encounter: Identification.id, editStyle: "simple", returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.Identification.label") }</a></li>
         <% } else { %>
         	<!--Note that these names are hard coded into the view using the module messages.properties file-->
         	<% if (activeVisit) { %>
@@ -29,7 +29,7 @@
         <% } %>   
         <!--Emergency Contact Information-->
         <% if (EmergencyContact) { %>
-            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/editHtmlFormWithSimpleUi", [ patientId: patient.patient.id, encounterId: EmergencyContact.id, returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.EmergencyContact.label") }</a></li>
+            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/viewEncounterWithHtmlForm", [ patientId: patient.patient.id, encounter: EmergencyContact.id, editStyle: "simple", returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.EmergencyContact.label") }</a></li>
         <% } else { %>
         	<!--Note that these names are hard coded into the view using the module messages.properties file-->
         	<% if (activeVisit) { %>
@@ -40,7 +40,7 @@
         <% } %> 
         <!--Family History-->
         <% if (FamilyHistory) { %>
-            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/editHtmlFormWithSimpleUi", [ patientId: patient.patient.id, encounterId: FamilyHistory.id, returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.FamilyHistory.label") }</a></li>
+            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/viewEncounterWithHtmlForm", [ patientId: patient.patient.id, encounter: FamilyHistory.id, editStyle: "simple", returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.FamilyHistory.label") }</a></li>
         <% } else { %>
         	<!--Note that these names are hard coded into the view using the module messages.properties file-->
         	<% if (activeVisit) { %>
@@ -51,7 +51,7 @@
         <% } %> 
         <!--Education Background-->
         <% if (EducationBackground) { %>
-            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/editHtmlFormWithSimpleUi", [ patientId: patient.patient.id, encounterId: EducationBackground.id, returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.EducationBackground.label") }</a></li>
+            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/viewEncounterWithHtmlForm", [ patientId: patient.patient.id, encounter: EducationBackground.id, editStyle: "simple", returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.EducationBackground.label") }</a></li>
         <% } else { %>
         	<!--Note that these names are hard coded into the view using the module messages.properties file-->
         	<% if (activeVisit) { %>
@@ -62,7 +62,7 @@
         <% } %> 
         <!--Relationship Information-->
         <% if (RelationshipInformation) { %>
-            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/editHtmlFormWithSimpleUi", [ patientId: patient.patient.id, encounterId: RelationshipInformation.id, returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.RelationshipInformation.label") }</a></li>
+            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/viewEncounterWithHtmlForm", [ patientId: patient.patient.id, encounter: RelationshipInformation.id, editStyle: "simple", returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.RelationshipInformation.label") }</a></li>
         <% } else { %>
         	<!--Note that these names are hard coded into the view using the module messages.properties file-->
         	<% if (activeVisit) { %>
@@ -73,7 +73,7 @@
         <% } %> 
         <!--Case Creation-->
         <% if (CaseCreation) { %>
-            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/editHtmlFormWithSimpleUi", [ patientId: patient.patient.id, encounterId: CaseCreation.id, returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.CaseCreation.label") }</a></li>
+            <li><span class="status active"></span> <a class="visit-link" href="${ ui.pageLink("htmlformentryui", "htmlform/viewEncounterWithHtmlForm", [ patientId: patient.patient.id, encounter: CaseCreation.id, editStyle: "simple", returnUrl: ui.thisUrl() ]) }">${ ui.message("SurvivorMIS.personalInformation.CaseCreation.label") }</a></li>
         <% } else { %>
         	<!--Note that these names are hard coded into the view using the module messages.properties file-->
         	<% if (activeVisit) { %>
